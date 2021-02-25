@@ -47,10 +47,10 @@ function App() {
         </nav>
         <main>
           <Switch>
-            <Route to="/login" component={LoginPage} />
-            <Route to="/search" component={SearchPage} />
-            <Route to="/favorites" component={FavoritesPage} />
-            <Route to="/reviews" component={ReviewsPage} />
+            <Route path="/login" component={LoginPage} />
+            <Route path="/search" component={SearchPage} />
+            <Route path="/favorites" component={FavoritesPage} />
+            <Route path="/reviews" component={ReviewsPage} />
             <Redirect to="login" />
           </Switch>
         </main>

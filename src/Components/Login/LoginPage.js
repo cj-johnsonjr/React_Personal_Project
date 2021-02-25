@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 const LoginPage = () => {
-  const history = useHistory;
+  const history = useHistory();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   function login() {
-    if (username > 8 && username < 16 && password > 6) {
+    if (username.length > 8 && username.length < 16 && password.length > 6) {
       history.push("/search");
     }
   }
