@@ -9,7 +9,7 @@ import DisplayPage from "../Display/DisplayPage";
 
 const SearchPage = (props) => {
   const [year, setYear] = useState(2021);
-  const [type, setType] = useState("Movies");
+  const [type, setType] = useState("movie");
   const [search, setSearch] = useState("");
   const [error, setError] = useState("");
   const [faveIds, setFaveIds] = useState([]);
@@ -24,9 +24,15 @@ const SearchPage = (props) => {
     try {
       setError("");
       let response = await fetch(url);
-      let json = response.json();
-      let resMovies = json.data.map((val) => {
-        return { id: val.imdbID, title: val.title, year: val.year };
+      let json = await response.json();
+      console.log(json);
+      let resMovies = json.Search.map((val) => {
+        return {
+          id: val.imdbID,
+          title: val.Title,
+          year: val.Year,
+          img: val.Poster,
+        };
       });
       props.setSearch(resMovies);
     } catch (e) {
@@ -57,9 +63,9 @@ const SearchPage = (props) => {
           onChange={(e) => setType(e.target.value)}
           id="type"
         >
-          <option>Movie</option>
-          <option>Show</option>
-          <option>Episode</option>
+          <option value="movie">movie</option>
+          <option value="series">show</option>
+          <option value="episode">episode</option>
         </select>
       </div>
       <div className="container space">
@@ -74,6 +80,7 @@ const SearchPage = (props) => {
       </div>
       <div className="container">
         <button onClick={(e) => getMovies(search, type, year)}>Search</button>
+        <hr />
         {error.length > 0 && <h1>{error}</h1>}
         {error.length === 0 &&
           props.movie.map((v) => (
@@ -86,7 +93,6 @@ const SearchPage = (props) => {
             />
           ))}
       </div>
-      <hr />
     </>
   );
 };
