@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+// import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
+// import { setUser } from "../../Redux/Actions";
 
 const LoginPage = () => {
   const history = useHistory();
@@ -37,4 +39,15 @@ const LoginPage = () => {
   );
 };
 
+// const mapDispatchToProps = {
+//   setUser,
+// };
+
+// function mapStateToProps() {
+//   return {
+//     username: state.user,
+//   };
+// }
+
+// export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
 export default LoginPage;
