@@ -9,7 +9,7 @@
 }
 
 .link {
-  flex-basis: calc(100% / 4);
+  flex-basis: calc(100% / 5);
   text-decoration: none;
   background-color: lightskyblue;
   color: beige;

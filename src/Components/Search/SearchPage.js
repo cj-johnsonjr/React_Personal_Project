@@ -32,6 +32,7 @@ const SearchPage = (props) => {
           title: val.Title,
           year: val.Year,
           img: val.Poster,
+          results: val.totalResults,
         };
       });
       props.setSearch(resMovies);

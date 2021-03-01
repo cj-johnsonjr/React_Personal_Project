@@ -1,0 +1,17 @@
+.movieparent {
+  display: flex;
+  flex-direction: column;
+  flex-basis: calc(100% / 3);
+}
+.movie {
+  max-width: 100%;
+  display: block;
+  margin: auto;
+}
+.centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  border: 3px solid green;
+}

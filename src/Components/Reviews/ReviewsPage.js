@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 
 const ReviewsPage = () => {
+  const [title, setTitle] = useState("");
+  const [revName, setRevName] = useState("");
+
   return (
     <>
       <h1 className="text-center">Submit a Review</h1>
       <div className="container">
         <label>Enter Name:</label>
-        <input type="text"></input>
+        <input
+          value={revName}
+          onChange={(e) => setRevName(e.target.value)}
+          type="text"
+        ></input>
         <label>Enter Movie/TV Show Title:</label>
-        <input type="text"></input>
+        <input
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          type="text"
+        ></input>
         <form>
           <p>
             Write a review:

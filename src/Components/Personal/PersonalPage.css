@@ -1,0 +1,20 @@
+.parent-movie {
+  font-family: arial, sans-serif;
+  margin: 10px;
+  padding: 5px;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.individual-movie {
+  padding: 10px;
+  margin-bottom: 50px;
+  border: 3px solid #2e86bb;
+  font-size: 14px;
+  text-align: center;
+  position: relative;
+  margin-right: 10px;
+}
+img {
+  cursor: pointer;
+}

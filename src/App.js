@@ -11,6 +11,7 @@ import FavoritesPage from "./Components/Favorites/FavoritesPage";
 import LoginPage from "./Components/Login/LoginPage";
 import ReviewsPage from "./Components/Reviews/ReviewsPage";
 import SearchPage from "./Components/Search/SearchPage";
+import PersonalPage from "./Components/Personal/PersonalPage";
 import store from "./Redux/store";
 
 function App() {
@@ -47,6 +48,13 @@ function App() {
             >
               Reviews
             </NavLink>
+            <NavLink
+              className="text-center link"
+              activeClassName="active-link"
+              to="/personal"
+            >
+              About
+            </NavLink>
           </nav>
           <main>
             <Switch>
@@ -54,10 +62,11 @@ function App() {
               <Route path="/search" component={SearchPage} />
               <Route path="/favorites" component={FavoritesPage} />
               <Route path="/reviews" component={ReviewsPage} />
+              <Route path="/personal" component={PersonalPage} />
               <Redirect to="login" />
             </Switch>
           </main>
-          <footer className="text-center">this is the footer</footer>
+          {/* <footer className="text-center">this is the footer</footer> */}
         </>
       </Router>
     </Provider>
