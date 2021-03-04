@@ -4,7 +4,7 @@ import "./PersonalPage.css";
 const PersonalPage = () => {
   return (
     <>
-      <h1 className="text-center">TOP 10 FLICKS</h1>
+      <h1 className="text-center">Personal Favorites</h1>
       <div className="parent-movie">
         <div className="individual-movie">
           <p>Blade Runner 2049</p>

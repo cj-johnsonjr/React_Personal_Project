@@ -1,3 +1,10 @@
 .space {
   margin-right: 5px;
 }
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  /* width: 90%; */
+  justify-content: center;
+}

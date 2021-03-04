@@ -6,6 +6,7 @@ import {
   deleteFavorite,
 } from "../../Redux/Actions/index";
 import DisplayPage from "../Display/DisplayPage";
+import "./SearchPage.css";
 
 const SearchPage = (props) => {
   const [year, setYear] = useState(2021);
@@ -44,7 +45,7 @@ const SearchPage = (props) => {
 
   return (
     <>
-      <h1 className="text-center">Welcome (Username)</h1>
+      <h1 className="text-center">IMBD Search</h1>
       <div className="container">
         <label htmlFor="title">Search For a Movie/Show:</label>
         <input
@@ -79,9 +80,9 @@ const SearchPage = (props) => {
           max="2025"
         ></input>
       </div>
+      <button onClick={(e) => getMovies(search, type, year)}>Search</button>
+      <hr />
       <div className="container">
-        <button onClick={(e) => getMovies(search, type, year)}>Search</button>
-        <hr />
         {error.length > 0 && <h1>{error}</h1>}
         {error.length === 0 &&
           props.movie.map((v) => (
