@@ -45,7 +45,7 @@ const SearchPage = (props) => {
 
   return (
     <>
-      <h1 className="text-center">IMBD Search</h1>
+      <h1 className="text-center">IMBD Search {props.username}</h1>
       <div className="container">
         <label htmlFor="title">Search For a Movie/Show:</label>
         <input
@@ -107,7 +107,7 @@ const mapDispatchToProps = {
 
 function mapStateToProps(state) {
   return {
-    username: state.user.username,
+    username: state.user,
     movie: state.search,
     favorite: state.favorite,
   };

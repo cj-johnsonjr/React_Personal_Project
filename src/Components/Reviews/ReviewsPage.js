@@ -7,7 +7,7 @@ const ReviewsPage = () => {
   return (
     <>
       <h1 className="text-center">Submit a Review</h1>
-      <div className="container">
+      <div>
         <label>Enter Name:</label>
         <input
           value={revName}
