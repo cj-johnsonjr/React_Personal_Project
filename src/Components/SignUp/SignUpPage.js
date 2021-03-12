@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { connect } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
-import { setUser } from "../../Redux/Actions";
 import { NavLink } from "react-router-dom";
 
 const SignUpPage = () => {
@@ -9,9 +7,8 @@ const SignUpPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  function signUp(props) {
+  function signUp() {
     if (username.length > 8 && username.length < 16 && password.length > 6) {
-      props.setUser(username);
       history.push("/login");
     }
   }
@@ -46,14 +43,4 @@ const SignUpPage = () => {
   );
 };
 
-const mapDispatchToProps = {
-  setUser,
-};
-
-function mapStateToProps(state) {
-  return {
-    username: state.user,
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(SignUpPage);
+export default SignUpPage;
