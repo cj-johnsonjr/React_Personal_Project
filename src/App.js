@@ -12,6 +12,7 @@ import LoginPage from "./Components/Login/LoginPage";
 import ReviewsPage from "./Components/Reviews/ReviewsPage";
 import SearchPage from "./Components/Search/SearchPage";
 import PersonalPage from "./Components/Personal/PersonalPage";
+import SignUpPage from "./Components/SignUp/SignUpPage";
 import store from "./Redux/store";
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
           <main>
             <Switch>
               <Route path="/login" component={LoginPage} />
+              <Route path="/signup" component={SignUpPage} />
               <Route path="/search" component={SearchPage} />
               <Route path="/favorites" component={FavoritesPage} />
               <Route path="/reviews" component={ReviewsPage} />
@@ -66,7 +68,6 @@ function App() {
               <Redirect to="login" />
             </Switch>
           </main>
-          {/* <footer className="text-center">this is the footer</footer> */}
         </>
       </Router>
     </Provider>

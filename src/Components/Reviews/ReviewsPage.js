@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
 
 const ReviewsPage = () => {
   const [title, setTitle] = useState("");
@@ -34,4 +35,17 @@ const ReviewsPage = () => {
   );
 };
 
+// const mapDispatchToProps = {
+//   addReview,
+//   deleteReview,
+// };
+
+// function mapStateToProps(state) {
+//   return {
+//     username: state.user,
+//     review: state.review,
+//   };
+// }
+
+// export default connect(mapStateToProps, mapDispatchToProps)(ReviewsPage);
 export default ReviewsPage;

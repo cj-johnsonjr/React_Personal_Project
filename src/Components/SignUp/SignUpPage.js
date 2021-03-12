@@ -4,41 +4,43 @@ import { Link, useHistory } from "react-router-dom";
 import { setUser } from "../../Redux/Actions";
 import { NavLink } from "react-router-dom";
 
-const LoginPage = () => {
+const SignUpPage = () => {
   const history = useHistory();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  function login(props) {
+  function signUp(props) {
     if (username.length > 8 && username.length < 16 && password.length > 6) {
       props.setUser(username);
-      history.push("/search");
+      history.push("/login");
     }
   }
   return (
     <>
-      <h1 className="text-center">LOG IN</h1>
+      <h1 className="text-center">Create an ACCOUNT</h1>
       <div className="container">
-        <label htmlFor="username">Username</label>
+        <label htmlFor="username">Create a Username</label>
         <input
           type="text"
-          placeholder="username"
+          placeholder="Must be between 8 and 16 characters"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         ></input>
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">Create a Password</label>
         <input
           type="password"
-          placeholder="password"
+          placeholder="Must be 8 or more characters"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         ></input>
-        <button type="submit" onClick={() => login()}>
-          Login
+        <button type="submit" onClick={() => signUp()}>
+          Sign up
         </button>
       </div>
       <div>
-        <NavLink to="/signup">New Users can Sign up HERE!</NavLink>
+        <NavLink to="/login">
+          Already a user - Click here to go back to LOGIN
+        </NavLink>
       </div>
     </>
   );
@@ -54,4 +56,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
+export default connect(mapStateToProps, mapDispatchToProps)(SignUpPage);
